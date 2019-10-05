@@ -3,22 +3,23 @@
 # the name of virtualenv to be created
 MY_VENV='mlenv'
 
-set -e
+set -x
 # change source
 if [ -r /etc/apt/sources.list ]; then
     sudo cp /etc/apt/sources.list /etc/apt/sources_init.list
     sudo rm /etc/apt/sources.list
 fi
 cp ./sources.list /etc/apt/
-sudo apt-get update
-sudo apt-get upgrade
+sudo apt-get -y update
+sudo apt-get -y upgrade
 
+set -e
 # install tools for c/c++, python3, pip3
-sudo apt-get install build-essential cmake python3-dev ubuntu-make
-sudo apt-get install python3-pip
-sudo apt-get install tmux
-sudo apt-get install openssh-server openssh-client
-sudo apt-get install cloc curl autojump
+sudo apt-get -y install build-essential cmake python3-dev
+sudo apt-get -y install python3-pip
+sudo apt-get -y install tmux
+sudo apt-get -y install openssh-server openssh-client
+sudo apt-get -y install cloc curl autojump
 # change the source of pip3
 mkdir ~/.pip
 cp ./pip.conf ~/.pip/
@@ -31,7 +32,7 @@ source ~/.bashrc
 
 
 # install vim and vim plugins
-sudo apt-get install vim
+sudo apt-get -y install vim
 if [ -r ~/.vimrc ]; then
     sudo rm ~/.vimrc
     cp ./.vimrc ~
