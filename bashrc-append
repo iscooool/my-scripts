@@ -1,0 +1,9 @@
+# virtualenv and virtualenvwrapper
+export WORKON_HOME=$HOME/.virtualenvs
+export LIBGL_ALWAYS_INDIRECT=1
+source /usr/local/bin/virtualenvwrapper.sh
+export DISPLAY=:0.0
+[[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
+alias tmux="TERM=screen-256color-bce tmux"
+export TERM=screen-256color
+
