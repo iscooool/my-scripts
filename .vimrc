@@ -29,8 +29,6 @@ noremap <c-[> <esc>
 
 syntax enable
 set background=dark
-let g:solarized_termcolors=256
-colorscheme solarized
 
 " nnoremap <C-N> :bn<CR>
 nnoremap <C-P> :bp<CR>
@@ -63,14 +61,16 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'Solarized'
+Plugin 'altercation/solarized'
+"let g:solarized_termcolors=256
+"colorscheme solarized
 Plugin 'easymotion/vim-easymotion'
 map <Leader><Leader> <Plug>(easymotion-prefix)
 Plugin 'Valloric/YouCompleteMe'
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 set completeopt=menu,menuone
 let g:ycm_add_preview_to_completeopt = 0
-let g:ycm_server_python_interpreter='/usr/bin/python'
+let g:ycm_server_python_interpreter='/usr/bin/python3'
 let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
 Plugin 'scrooloose/nerdtree'
 let g:NERDTreeChDirMode = 2
