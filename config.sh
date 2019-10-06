@@ -13,7 +13,6 @@ cp ./sources.list /etc/apt/
 sudo apt-get -y update
 sudo apt-get -y upgrade
 
-set -e
 # install tools for c/c++, python3, pip3
 sudo apt-get -y install build-essential cmake python3-dev
 sudo apt-get -y install python3-pip
@@ -39,6 +38,7 @@ if [ -r ~/.vimrc ]; then
 else
     cp ./.vimrc ~
 fi
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim -c 'PluginInstall' -c 'qa!'
 cd ~/.vim/bundle/YouCompleteMe
 python3 install.py --clang-completer
