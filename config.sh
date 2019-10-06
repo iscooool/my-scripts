@@ -13,11 +13,11 @@ sudo apt-get -y update
 sudo apt-get -y upgrade
 
 # install tools for c/c++, python3, pip3
-sudo apt-get -y install build-essential cmake python3-dev
+sudo apt-get -y install build-essential cmake python3-dev python
 sudo apt-get -y install python3-pip
 sudo apt-get -y install tmux
 sudo apt-get -y install openssh-server openssh-client
-sudo apt-get -y install cloc curl autojump
+sudo apt-get -y install cloc curl
 sudo apt-get -y install openssl
 sudo apt-get -y install libcurl4-openssl-dev libssl-dev
 # change the source of pip3
@@ -26,6 +26,12 @@ sudo cp ./pip.conf ~/.pip/
 pip3 install --upgrade pip
 pip3 install virtualenv
 pip3 install virtualenvwrapper
+
+# install autojump
+git clone git://github.com/wting/autojump.git
+cd autojump
+python3 install.py
+cd ..
 
 cat ./bashrc-append >> ~/.bashrc
 source ~/.bashrc
