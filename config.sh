@@ -16,6 +16,7 @@ sudo apt-get -y upgrade
 sudo apt-get -y install build-essential cmake python3-dev python
 sudo apt-get -y install python3-pip
 sudo apt-get -y install tmux
+sudo apt-get -y install ctags silversearcher-ag 
 sudo apt-get -y install openssh-server openssh-client
 sudo apt-get -y install cloc curl
 sudo apt-get -y install openssl

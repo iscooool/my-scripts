@@ -20,6 +20,12 @@ set nofoldenable
 set foldlevel=2
 set expandtab
 let mapleader = ","
+" for ctags 
+set autochdir 
+set tags+=./tags;
+" for ctrlp.
+set splitright
+set winwidth=85
 nnoremap <c-u> viwlU
 " open vimrc and save vimrc
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
@@ -29,6 +35,8 @@ noremap <c-[> <esc>
 
 syntax enable
 set background=dark
+let g:solarized_termcolors=256
+colorscheme solarized
 
 " nnoremap <C-N> :bn<CR>
 nnoremap <C-P> :bp<CR>
@@ -43,6 +51,15 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'kien/ctrlp.vim'
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+if executable('ag')
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll|jpg|png)$'
+  \ }
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:10,results:20'
@@ -61,16 +78,14 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'altercation/solarized'
-"let g:solarized_termcolors=256
-"colorscheme solarized
+Plugin 'Solarized'
 Plugin 'easymotion/vim-easymotion'
 map <Leader><Leader> <Plug>(easymotion-prefix)
 Plugin 'Valloric/YouCompleteMe'
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 set completeopt=menu,menuone
 let g:ycm_add_preview_to_completeopt = 0
-let g:ycm_server_python_interpreter='/usr/bin/python3'
+let g:ycm_server_python_interpreter='/usr/bin/python'
 let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
 Plugin 'scrooloose/nerdtree'
 let g:NERDTreeChDirMode = 2
@@ -91,6 +106,10 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-surround'
+" for markdown syntax.
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+filetype plugin on
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
