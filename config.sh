@@ -23,10 +23,10 @@ sudo apt-get -y install openssl
 sudo apt-get -y install libcurl4-openssl-dev libssl-dev
 # change the source of pip3
 mkdir ~/.pip
-sudo cp ./pip.conf ~/.pip/
-pip3 install --upgrade pip
-pip3 install virtualenv
-pip3 install virtualenvwrapper
+cp ./pip.conf ~/.pip/
+sudo pip3 install --upgrade pip
+sudo pip3 install virtualenv
+sudo pip3 install virtualenvwrapper
 
 # install autojump
 git clone git://github.com/wting/autojump.git
@@ -35,6 +35,8 @@ python3 install.py
 cd ..
 
 cat ./bashrc-append >> ~/.bashrc
+echo "alias "${MY_VENV}'="source '\
+'${HOME}/.virtualenvs/'${MY_VENV}'/bin/activate"' >> ~/.bashrc
 source ~/.bashrc
 
 
@@ -42,9 +44,9 @@ source ~/.bashrc
 sudo apt-get -y install vim
 if [ -r ~/.vimrc ]; then
     sudo rm ~/.vimrc
-    sudo cp ./.vimrc ~
+    cp ./.vimrc ~
 else
-    sudo cp ./.vimrc ~
+    cp ./.vimrc ~
 fi
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim -c 'PluginInstall' -c 'qa!'
@@ -58,4 +60,4 @@ deactivate
 
 # configure tmux
 [ -r ~/.tmux.conf ] && sudo rm ~/.tmux.conf
-sudo cp .tmux.conf ~
+cp .tmux.conf ~
