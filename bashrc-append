@@ -6,7 +6,7 @@ export LIBGL_ALWAYS_INDIRECT=1
 source /usr/local/bin/virtualenvwrapper.sh
 export DISPLAY=:0.0
 [[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
-alias tmux="TERM=screen-256color-bce tmux"
+# alias tmux="TERM=screen-256color-bce tmux"
 # export TERM=screen-256color
 # if you use microsoft terminal or Fluent terminal, use xterm for proper tmux
 # render.
