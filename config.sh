@@ -13,7 +13,7 @@ sudo apt-get -y update
 sudo apt-get -y upgrade
 
 # install tools for c/c++, python3, pip3
-sudo apt-get -y install build-essential cmake python3-dev python
+sudo apt-get -y install build-essential cmake python3-dev python python3-tk
 sudo apt-get -y install python3-pip
 sudo apt-get -y install tmux
 sudo apt-get -y install ctags silversearcher-ag 
