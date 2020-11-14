@@ -1,6 +1,5 @@
 # virtualenv and virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
-export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 export LIBGL_ALWAYS_INDIRECT=1
 source /usr/local/bin/virtualenvwrapper.sh
