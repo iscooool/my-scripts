@@ -106,6 +106,7 @@ Plugin 'tpope/vim-surround'
 " for markdown syntax.
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'jiangmiao/auto-pairs'
 filetype plugin on
 call vundle#end()            " required
 filetype plugin indent on    " required
